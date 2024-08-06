@@ -1,0 +1,25 @@
+FROM Python 3.12.4-slim-buster
+
+WORKDIR /myapp
+
+LABEL maintainer = "api.imperfect@gmail.com"
+
+LABEL description="Development image the schools Geodjango api"
+
+ENV PYTHONDONTWRITEBYTECODE 1
+
+ENV PYTHONUNBUFFERED 1
+
+RUN apt-get update \
+  && apt-get -y install netcat gcc  \
+  && apt-get clean
+
+
+RUN apt-get update \
+  && apt-get install -y binutils libproj-dev gdal-bin python-gdal
+
+RUN pip install --upgrade pip
+
+COPY ./requirements.txt /myapp/requirements.txt
+
+COPY . /myapp 
