@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
-        'NAME': 'kenya',
-        'USER': 'Geodata',
-        'PASSWORD': 'Geodata',
+        'NAME': 'kenya_schools',
+        'USER': 'postgres',
+        'PASSWORD': 'Straton12.',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 
